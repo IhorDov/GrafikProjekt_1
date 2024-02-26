@@ -81,11 +81,15 @@ namespace GrafikProjekt1
             "Shaders/shader.frag", uniforms);
             Renderer rend = new Renderer(mat, new QuadMesh());
             Renderer rend2 = new Renderer(mat, new CubeMesh());
+            Renderer rend3 = new Renderer(mat, new SphereMesh());
             GameObject triangle = new GameObject(rend, this);
             gameObjects.Add(triangle);
             GameObject cube = new GameObject(rend2, this);
             cube.transform.Position = new Vector3(1, 0, 0);
             gameObjects.Add(cube);
+            GameObject sphere = new GameObject(rend3, this);
+            sphere.transform.Position = new Vector3(-1, 0, 0);
+            gameObjects.Add(sphere);
             GameObject cam = new GameObject(null, this);
             cam.AddComponent<Camera>(60.0f, (float)Size.X, (float)Size.Y, 0.3f, 1000.0f);
             camera = cam.GetComponent<Camera>();
