@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GrafikProjekt1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ed2db6bd87b952a69185d928fb42376fc41b833")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc8c98b64786e9bac2e4793fed68ea0595506760")]
 [assembly: System.Reflection.AssemblyProductAttribute("GrafikProjekt1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GrafikProjekt1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -38,6 +38,7 @@ namespace GrafikProjekt1
         protected override void OnUpdateFrame(FrameEventArgs args)
         {
             base.OnUpdateFrame(args);
+            KeyboardState input = KeyboardState;
             gameObjects.ForEach(x => x.Update(args));
 
             if (IsFocused)
@@ -45,17 +46,12 @@ namespace GrafikProjekt1
 
                 MouseState mouse = MouseState;
 
-
-
             }
 
-
-
-
-
-
-
-
+            if (input.IsKeyDown(Keys.Escape))
+            {
+                Close();
+            }
 
         }
 
@@ -64,14 +60,8 @@ namespace GrafikProjekt1
             base.OnLoad();
 
 
-
-
-
-
             Texture texture0 = new Texture("Textures/wall.jpg");
             Texture texture1 = new Texture("Textures/AragonTexUdenBaggrund.png");
-
-
 
 
             Dictionary<string, object> uniforms = new Dictionary<string, object>();
@@ -99,17 +89,22 @@ namespace GrafikProjekt1
 
             GL.Enable(EnableCap.DepthTest);
 
+        }
 
-
-
-
-
-
-
-
-
-
-
+        protected override void OnKeyDown(KeyboardKeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+            if (e.Key == Keys.F11)
+            {
+                if (WindowState == WindowState.Fullscreen)
+                {
+                    WindowState = WindowState.Normal;
+                }
+                else
+                {
+                    WindowState = WindowState.Fullscreen;
+                }
+            }
 
 
         }
