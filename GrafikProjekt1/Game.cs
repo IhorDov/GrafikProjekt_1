@@ -11,18 +11,11 @@ namespace GrafikProjekt1
 {
     public class Game : GameWindow
     {
-        
 
-
-
-
-
-
-
-       
         private List<GameObject> gameObjects = new List<GameObject>();
+        Camera camera;
 
-        
+
 
         public Game(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings) : base(gameWindowSettings, nativeWindowSettings)
         {
@@ -36,7 +29,7 @@ namespace GrafikProjekt1
             Matrix4 view = Matrix4.CreateTranslation(0.0f, 0, -3f);
             Matrix4 projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(60.0f),
             (float)Size.X / (float)Size.Y, 0.3f, 1000.0f);
-            gameObjects.ForEach(x => x.Draw(view * projection));
+            gameObjects.ForEach(x => x.Draw(camera.GetViewProjection()));
             SwapBuffers();
 
 
@@ -47,15 +40,22 @@ namespace GrafikProjekt1
             base.OnUpdateFrame(args);
             gameObjects.ForEach(x => x.Update(args));
 
-            
-            //Console.WriteLine((float)watch.Elapsed.TotalSeconds);
-            
+            if (IsFocused)
+            {
 
-            
+                MouseState mouse = MouseState;
 
-            
 
-            
+
+            }
+
+
+
+
+
+
+
+
 
         }
 
@@ -63,17 +63,17 @@ namespace GrafikProjekt1
         {
             base.OnLoad();
 
-            
 
-            
 
-            
+
+
+
             Texture texture0 = new Texture("Textures/wall.jpg");
             Texture texture1 = new Texture("Textures/AragonTexUdenBaggrund.png");
-    
-            
 
-            
+
+
+
             Dictionary<string, object> uniforms = new Dictionary<string, object>();
             uniforms.Add("texture0", texture0);
             uniforms.Add("texture1", texture1);
@@ -86,13 +86,17 @@ namespace GrafikProjekt1
             GameObject cube = new GameObject(rend2, this);
             cube.transform.Position = new Vector3(1, 0, 0);
             gameObjects.Add(cube);
+            GameObject cam = new GameObject(null, this);
+            cam.AddComponent<Camera>(60.0f, (float)Size.X, (float)Size.Y, 0.3f, 1000.0f);
+            camera = cam.GetComponent<Camera>();
+            gameObjects.Add(cam);
 
 
 
             GL.Enable(EnableCap.DepthTest);
 
 
-      
+
 
 
 
@@ -110,10 +114,12 @@ namespace GrafikProjekt1
         {
             base.OnUnload();
             GL.BindBuffer(BufferTarget.ArrayBuffer, 0);
-            
+
         }
 
-        
+
+
+
 
 
     }
