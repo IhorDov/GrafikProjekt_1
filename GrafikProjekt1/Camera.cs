@@ -14,7 +14,7 @@ namespace GrafikProjekt1
         private Vector3 front = new Vector3(0.0f, 0.0f, -1.0f);
         private Vector3 up = new Vector3(0.0f, 1.0f, 0.0f);
         private float speed = 1.0f;
-        private float sensitivity = 0.1f;
+        private float sensitivity = 0.05f;
         private float fov;
         private float aspectX;
         private float aspectY;
@@ -47,19 +47,19 @@ namespace GrafikProjekt1
         {
             KeyboardState input = window.KeyboardState;
 
-            if (input.IsKeyDown(Keys.W))
+            if (input.IsKeyDown(Keys.Up))
             {
                 gameObject.transform.Position += front * speed * (float)args.Time; // Forward
             }
-            if (input.IsKeyDown(Keys.S))
+            if (input.IsKeyDown(Keys.Down))
             {
                 gameObject.transform.Position -= front * speed * (float)args.Time; // Backwards
             }
-            if (input.IsKeyDown(Keys.A))
+            if (input.IsKeyDown(Keys.Left))
             {
                 gameObject.transform.Position -= Vector3.Normalize(Vector3.Cross(front, up)) * speed * (float)args.Time; // Left
             }
-            if (input.IsKeyDown(Keys.D))
+            if (input.IsKeyDown(Keys.Right))
             {
                 gameObject.transform.Position += Vector3.Normalize(Vector3.Cross(front, up)) * speed * (float)args.Time; // Right
             }
@@ -107,15 +107,18 @@ namespace GrafikProjekt1
                 }
 
                 // Recalculate front vector based on new yaw and pitch
-                front.X = (float)Math.Cos(MathHelper.DegreesToRadians(pitch)) * (float)Math.Cos(MathHelper.DegreesToRadians(yaw));
+                front.X = (float)Math.Cos(MathHelper.DegreesToRadians(pitch)) * (float)Math.Sin(MathHelper.DegreesToRadians(yaw));
+                front.Z = -(float)Math.Cos(MathHelper.DegreesToRadians(pitch)) * (float)Math.Cos(MathHelper.DegreesToRadians(yaw));
                 front.Y = (float)Math.Sin(MathHelper.DegreesToRadians(pitch));
-                front.Z = (float)Math.Cos(MathHelper.DegreesToRadians(pitch)) * (float)Math.Sin(MathHelper.DegreesToRadians(yaw));
                 front = Vector3.Normalize(front);
             }
         }
 
         public Matrix4 GetViewProjection()
         {
+            //Matrix4 view2;
+            //Matrix4.Invert(gameObject.transform.CalculateModel(), out view2);
+            //Matrix4 view = view2
             Matrix4 view = Matrix4.LookAt(gameObject.transform.Position, gameObject.transform.Position + front, up);
             Matrix4 projection = Matrix4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(fov), aspectX / aspectY, near, far);
             return view * projection;

@@ -16,6 +16,14 @@ namespace GrafikProjekt1
         protected GameWindow gameWindow;
 
         List<Behaviour> behaviours = new List<Behaviour>();
+
+        public GameObject(Renderer renderer, Game gameWindow)
+        {
+            this.renderer = renderer;
+            this.gameWindow = gameWindow;
+            transform = new Transform();
+        }
+
         public T GetComponent<T>() where T : Behaviour
         {
             foreach (Behaviour component in behaviours)
@@ -25,6 +33,7 @@ namespace GrafikProjekt1
             }
             return null;
         }
+
         public void AddComponent<T>(params object?[]? args) where T : Behaviour
         {
             if (args == null)
@@ -47,12 +56,6 @@ namespace GrafikProjekt1
             }
         }
 
-        public GameObject(Renderer renderer, Game gameWindow)
-        {
-            this.renderer = renderer;
-            this.gameWindow = gameWindow;
-            transform = new Transform();
-        }
 
         public void Update(FrameEventArgs args)
         {
