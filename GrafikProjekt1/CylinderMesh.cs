@@ -9,33 +9,29 @@ namespace GrafikProjekt1
 {
     public class CylinderMesh : Mesh
     {
+
         private static int vertexArrayObject;
         private static int elementBufferObject;
         private static int vertexBufferObject;
-        private static int normalBufferObject;
-        private bool bufferGenerated = false;
 
-        public static float[] vertices = GenerateCylinderVertices(Cylinder.Sectors, Cylinder.Stacks, Cylinder.Radius, Cylinder.Height);
+        // Predefined cylinder attributes
+        static int sectors = 8;
+        static int stacks = 1;
+        static float radius = 0.5f;
+        static float height = 1.0f;
 
-        public static uint[] indices = GenerateCylinderIndices(Cylinder.Sectors, Cylinder.Stacks);
+        public static float[] vertices = GenerateCylinderVertices(sectors, stacks, radius, height);
+        public static uint[] indices = GenerateCylinderIndices(sectors, stacks);
 
-        //Normals are used in computer graphics primarily for lighting. A normal is a vector
-        //indicating the direction a surface is facing. To know how a surface must be lit,
-        //the software must know how it is oriented, since how a surface is oriented greatly
-        //influences how light gets reflected off of it.
-        public static float[] normals = GenerateCylinderNormals(Cylinder.Sectors, Cylinder.Stacks, Cylinder.Radius, Cylinder.Height);
+        private bool bufferGenerated;
+
 
         public override void Draw()
         {
-            // Bind the VAO
+
             GL.BindVertexArray(vertexArrayObject);
-            // Draw the mesh
-
-            //GL.DrawArrays(PrimitiveType.TriangleFan, 0, vertices.Length / 3);//works
-
             GL.DrawElements(PrimitiveType.Triangles, indices.Length, DrawElementsType.UnsignedInt, 0);
-            //Unbind the VAO
-            GL.BindVertexArray(0);
+
         }
 
         protected override void GenerateBuffers()
@@ -45,59 +41,25 @@ namespace GrafikProjekt1
                 return;
             }
 
-            // Generate the VBO
+            // Vertex Buffer Object - VBO
             vertexBufferObject = GL.GenBuffer();
             GL.BindBuffer(BufferTarget.ArrayBuffer, vertexBufferObject);
             GL.BufferData(BufferTarget.ArrayBuffer, vertices.Length * sizeof(float), vertices, BufferUsageHint.StaticDraw);
 
-            // Generate the VBO for the normals
-            normalBufferObject = GL.GenBuffer();
-            GL.BindBuffer(BufferTarget.ArrayBuffer, normalBufferObject);
-            GL.BufferData(BufferTarget.ArrayBuffer, normals.Length * sizeof(float), normals, BufferUsageHint.StaticDraw);
-
-            // Generate the VAO
+            // Vertex Array Object - VAO
             vertexArrayObject = GL.GenVertexArray();
             GL.BindVertexArray(vertexArrayObject);
+            GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), 0);
+            GL.EnableVertexAttribArray(0);
+            GL.VertexAttribPointer(1, 2, VertexAttribPointerType.Float, false, 5 * sizeof(float), 3 * sizeof(float));
+            GL.EnableVertexAttribArray(1);
 
-            // Generate the EBO
+            // Element Buffer Object - Generate the EBO
             elementBufferObject = GL.GenBuffer();
             GL.BindBuffer(BufferTarget.ElementArrayBuffer, elementBufferObject);
             GL.BufferData(BufferTarget.ElementArrayBuffer, indices.Length * sizeof(uint), indices, BufferUsageHint.StaticDraw);
 
-            // Bind the VBO
-            GL.BindBuffer(BufferTarget.ArrayBuffer, vertexBufferObject);
-            // Bind the VBO to the VAO
-            GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 5 * sizeof(float), 0);
-            GL.EnableVertexAttribArray(0);
-
-            GL.BindBuffer(BufferTarget.ArrayBuffer, normalBufferObject);
-            GL.VertexAttribPointer(1, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
-            GL.EnableVertexAttribArray(1);
-
             bufferGenerated = true;
-        }
-
-
-        private static float[] GenerateCylinderNormals(int sectors, int stacks, float radius, float height)
-        {
-            List<float> normals = new List<float>();
-
-            float sectorStep = 2 * (float)Math.PI / sectors;
-            float stackStep = height / stacks;
-            float sectorAngle, stackPosition;
-
-            for (int i = 0; i <= stacks; i++)
-            {
-                stackPosition = -0.5f * height + i * stackStep;
-                for (int j = 0; j <= sectors; j++)
-                {
-                    sectorAngle = j * sectorStep;
-                    normals.Add((float)Math.Cos(sectorAngle));
-                    normals.Add(0);
-                    normals.Add((float)Math.Sin(sectorAngle));
-                }
-            }
-            return normals.ToArray();
         }
 
         private static float[] GenerateCylinderVertices(int sectors, int stacks, float radius, float height)
@@ -176,14 +138,14 @@ namespace GrafikProjekt1
 
             // Generate indices for the top face
             uint baseIndex = (uint)(sectors * (stacks + 1));
-            uint centerIndex = (uint)(baseIndex + sectors); // Index of the center vertex
+            uint centerIndex = (uint)(baseIndex + sectors);
 
             // Add the center vertex for the top face
             for (int j = 0; j < sectors; j++)
             {
                 indices.Add(centerIndex);
                 indices.Add((uint)(baseIndex + j));
-                indices.Add((uint)(baseIndex + (j + 1) % sectors)); // Use modulo to connect the last vertex with the first
+                indices.Add((uint)(baseIndex + (j + 1) % sectors));
             }
 
             // Add the center vertex for the bottom face

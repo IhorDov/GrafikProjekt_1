@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Missen\\OneDrive\\Dokumenter\\GitHub\\GrafikProjekt_1\\GrafikProjekt1\\",
+  "WorkspaceRootPath": "C:\\Users\\Misse\\OneDrive\\Dokumenter\\GitHub\\unrealTD\\GrafikProjekt_1\\GrafikProjekt1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|c:\\users\\missen\\onedrive\\dokumenter\\github\\grafikprojekt_1\\grafikprojekt1\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|c:\\users\\misse\\onedrive\\dokumenter\\github\\unrealtd\\grafikprojekt_1\\grafikprojekt1\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|c:\\users\\missen\\onedrive\\dokumenter\\github\\grafikprojekt_1\\grafikprojekt1\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|c:\\users\\misse\\onedrive\\dokumenter\\github\\unrealtd\\grafikprojekt_1\\grafikprojekt1\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|solutionrelative:gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|c:\\users\\missen\\onedrive\\dokumenter\\github\\grafikprojekt_1\\grafikprojekt1\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|c:\\users\\misse\\onedrive\\dokumenter\\github\\unrealtd\\grafikprojekt_1\\grafikprojekt1\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|solutionrelative:camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|c:\\users\\missen\\onedrive\\dokumenter\\github\\grafikprojekt_1\\grafikprojekt1\\behaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|c:\\users\\misse\\onedrive\\dokumenter\\github\\unrealtd\\grafikprojekt_1\\grafikprojekt1\\behaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90E859D5-4CAF-4FFE-B7AB-B8243F1C0C5E}|GrafikProjekt1.csproj|solutionrelative:behaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,32 +26,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "GameObject.cs",
-              "DocumentMoniker": "C:\\Users\\Missen\\OneDrive\\Dokumenter\\GitHub\\GrafikProjekt_1\\GrafikProjekt1\\GameObject.cs",
+              "DocumentMoniker": "C:\\Users\\Misse\\OneDrive\\Dokumenter\\GitHub\\unrealTD\\GrafikProjekt_1\\GrafikProjekt1\\GameObject.cs",
               "RelativeDocumentMoniker": "GameObject.cs",
-              "ToolTip": "C:\\Users\\Missen\\OneDrive\\Dokumenter\\GitHub\\GrafikProjekt_1\\GrafikProjekt1\\GameObject.cs",
+              "ToolTip": "C:\\Users\\Misse\\OneDrive\\Dokumenter\\GitHub\\unrealTD\\GrafikProjekt_1\\GrafikProjekt1\\GameObject.cs",
               "RelativeToolTip": "GameObject.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAAwEgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T11:04:17.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-26T11:04:17.373Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Users\\Missen\\OneDrive\\Dokumenter\\GitHub\\GrafikProjekt_1\\GrafikProjekt1\\Game.cs",
+              "DocumentMoniker": "C:\\Users\\Misse\\OneDrive\\Dokumenter\\GitHub\\unrealTD\\GrafikProjekt_1\\GrafikProjekt1\\Game.cs",
               "RelativeDocumentMoniker": "Game.cs",
-              "ToolTip": "C:\\Users\\Missen\\OneDrive\\Dokumenter\\GitHub\\GrafikProjekt_1\\GrafikProjekt1\\Game.cs",
+              "ToolTip": "C:\\Users\\Misse\\OneDrive\\Dokumenter\\GitHub\\unrealTD\\GrafikProjekt_1\\GrafikProjekt1\\Game.cs",
               "RelativeToolTip": "Game.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAHwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -62,27 +57,25 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Camera.cs",
-              "DocumentMoniker": "C:\\Users\\Missen\\OneDrive\\Dokumenter\\GitHub\\GrafikProjekt_1\\GrafikProjekt1\\Camera.cs",
+              "DocumentMoniker": "C:\\Users\\Misse\\OneDrive\\Dokumenter\\GitHub\\unrealTD\\GrafikProjekt_1\\GrafikProjekt1\\Camera.cs",
               "RelativeDocumentMoniker": "Camera.cs",
-              "ToolTip": "C:\\Users\\Missen\\OneDrive\\Dokumenter\\GitHub\\GrafikProjekt_1\\GrafikProjekt1\\Camera.cs",
+              "ToolTip": "C:\\Users\\Misse\\OneDrive\\Dokumenter\\GitHub\\unrealTD\\GrafikProjekt_1\\GrafikProjekt1\\Camera.cs",
               "RelativeToolTip": "Camera.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAHoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T11:01:49.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-26T11:01:49.451Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Behaviour.cs",
-              "DocumentMoniker": "C:\\Users\\Missen\\OneDrive\\Dokumenter\\GitHub\\GrafikProjekt_1\\GrafikProjekt1\\Behaviour.cs",
+              "DocumentMoniker": "C:\\Users\\Misse\\OneDrive\\Dokumenter\\GitHub\\unrealTD\\GrafikProjekt_1\\GrafikProjekt1\\Behaviour.cs",
               "RelativeDocumentMoniker": "Behaviour.cs",
-              "ToolTip": "C:\\Users\\Missen\\OneDrive\\Dokumenter\\GitHub\\GrafikProjekt_1\\GrafikProjekt1\\Behaviour.cs",
+              "ToolTip": "C:\\Users\\Misse\\OneDrive\\Dokumenter\\GitHub\\unrealTD\\GrafikProjekt_1\\GrafikProjekt1\\Behaviour.cs",
               "RelativeToolTip": "Behaviour.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-26T11:01:41.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-26T11:01:41.161Z"
             }
           ]
         }
