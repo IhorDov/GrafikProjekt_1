@@ -68,16 +68,22 @@ namespace GrafikProjekt1
             Renderer rend = new Renderer(mat, new QuadMesh());
             Renderer rend2 = new Renderer(mat, new CubeMesh());
             Renderer rend3 = new Renderer(mat, new SphereMesh());
+            Renderer rend4 = new Renderer(mat, new CylinderMesh());
 
-            GameObject triangle = new GameObject(rend, this);
-            gameObjects.Add(triangle);
+            //GameObject triangle = new GameObject(rend, this);
+            //gameObjects.Add(triangle);
+            GameObject cylinder = new GameObject(rend4, this);
+            cylinder.AddComponent<MoveLeftRightBehaviour>();
+            cylinder.AddComponent<MoveUpDownBehaviour>();
+            cylinder.transform.Position = new Vector3(0, 0, 0);
+            gameObjects.Add(cylinder);
             GameObject cube = new GameObject(rend2, this);
             cube.transform.Position = new Vector3(-1, 0, 0);
             gameObjects.Add(cube);
             GameObject sphere = new GameObject(rend3, this);
             sphere.transform.Position = new Vector3(1, 0, 0);
-            sphere.AddComponent<MoveLeftRightBehaviour>();
-            sphere.AddComponent<MoveUpDownBehaviour>();
+            //sphere.AddComponent<MoveLeftRightBehaviour>();
+            //sphere.AddComponent<MoveUpDownBehaviour>();
             gameObjects.Add(sphere);
 
             GameObject cam = new GameObject(null, this);
